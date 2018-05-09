@@ -19,6 +19,7 @@ __pycache__/
 env/
 bin/
 build/
+media/
 develop-eggs/
 dist/
 eggs/

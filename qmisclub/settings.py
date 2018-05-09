@@ -16,7 +16,7 @@ secrets = {n.split(',')[0]:n.split(',')[1].rstrip() for n in file}
 SECRET_KEY = secrets['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['139.141.236.181', 'web02.cba.edu.kw', 'qmisclub.cba.edu.kw']
 
