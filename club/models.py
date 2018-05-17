@@ -42,13 +42,13 @@ class Picture(models.Model):
             output = BytesIO()
             output2 = BytesIO()
             # Resize/modify the image
-            if self.home_page:
-                im = im.resize((1280, 720))
-            else:
-                im = im.resize((1280, int(1280 / aspect_ratio)))
+            # if self.home_page:
+            #     im = im.resize((1280, 720))
+            # else:
+            im = im.resize((1280, int(1280 / aspect_ratio)))
             im2 = im.resize((400, 200))
             # after modifications, save it to the output
-            im.save(output, format='JPEG', quality=70)
+            im.save(output, format='JPEG', quality=80)
             im2.save(output2, format='JPEG', quality=50)
             output.seek(0)
             output2.seek(0)
@@ -96,7 +96,7 @@ class Member(models.Model):
             im = im.resize((1280, int(1280 / aspect_ratio)))
 
             # after modifications, save it to the output
-            im.save(output, format='JPEG', quality=70)
+            im.save(output, format='JPEG', quality=80)
             output.seek(0)
 
             # change the imagefield value to be the newley modifed image value
