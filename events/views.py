@@ -26,9 +26,9 @@ def view_event(request, event_id):
 
 
 def list_view_upcoming_events(request):
-    upcoming_events = Event.objects.filter(date_and_time__gte=datetime.now())
+    upcoming_events = Event.objects.filter(date_and_time__gte=datetime.now()).order_by('date_and_time')
     return render(request, 'list_view_upcoming_events.html', {'events': upcoming_events})
 
 def list_view_past_events(request):
-    past_events = Event.objects.filter(date_and_time__lte=datetime.now())
+    past_events = Event.objects.filter(date_and_time__lte=datetime.now()).order_by('-date_and_time')
     return render(request, 'list_view_past_events.html', {'events': past_events})
