@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 from django.contrib import admin
 from club import views
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^qmisadmin/', admin.site.urls),
     url(r'^events/', include('events.urls')),
     url(r'^club/', include('club.urls')),
     url(r'^department/', include('department.urls')),
