@@ -39,7 +39,7 @@ class FacultyMember(models.Model):
             im = im.resize((1280, int(1280 / aspect_ratio)))
 
             # after modifications, save it to the output
-            im.save(output, format='JPEG', quality=70)
+            im.save(output, format='JPEG', quality=80)
             output.seek(0)
 
             # change the imagefield value to be the newley modifed image value
@@ -81,7 +81,8 @@ class Document(models.Model):
     NAMES = (('MIS Curriculum Guide', 'MIS Curriculum Guide'),
              ('OSCM Curriculum Guide', 'OSCM Curriculum Guide'),
              ('All Other CBA Courses', 'All Other CBA Courses'),
-             ('Student Placement', 'Student Placement'))
+             ('Student Placement', 'Student Placement'),
+             ('Department Map', 'Department Map'))
     name = models.CharField("Name", null=True, choices=sorted(
         NAMES), max_length=64, blank=False, unique=True)
     document = models.FileField(null=False)

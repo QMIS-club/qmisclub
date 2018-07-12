@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^term_of_use$', TemplateView.as_view(template_name='term_of_use.html'), name = 'term_of_use'),
     url(r'^college_guide/$',TemplateView.as_view(template_name='college_guide.html'),
     name='college_guide'),
+    url(r'^quick_links/$',views.quick_links,name='quick_links'),
     url(r'^FAQ$', views.FAQ,name='FAQ'),
     url(r'^$', views.index,name='index')
 

@@ -33,10 +33,10 @@ class Event(models.Model):
             output = BytesIO()
 
             # Resize/modify the image
-            im = im.resize((1280, int(1280/aspect_ratio)))
+            im = im.resize((1280, 720))
 
             # after modifications, save it to the output
-            im.save(output, format='JPEG', quality=70)
+            im.save(output, format='JPEG', quality=90)
             output.seek(0)
 
             # change the imagefield value to be the newley modifed image value

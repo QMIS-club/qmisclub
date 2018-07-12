@@ -4,7 +4,7 @@ from django.conf import settings
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from .forms import JoinForm
-from .models import Picture, Member, Video, Category, WelcomingWord, HomePageVideo,ContactUsVideo
+from .models import Picture, Member, Video, Category, WelcomingWord, HomePageVideo,ContactUsVideo,QuickLinks
 from .models import FAQ as FAQModel
 from club.instagram_api_reader import InstagramReader
 from django.views.static import serve
@@ -97,6 +97,10 @@ def contact_us(request):
     obj = ContactUsVideo.objects.all()
     return render(request, 'contact_us.html',{'video':obj})
 
+def quick_links(request):
+    '''This function will get all the quick links'''
+    obj = QuickLinks.objects.all().order_by('name')
+    return render(request, 'quick_links.html',{'links':obj})
 
 
 def handler404(request):

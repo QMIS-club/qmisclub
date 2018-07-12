@@ -48,7 +48,7 @@ class Picture(models.Model):
             im = im.resize((1280, int(1280 / aspect_ratio)))
             im2 = im.resize((400, 200))
             # after modifications, save it to the output
-            im.save(output, format='JPEG', quality=80)
+            im.save(output, format='JPEG', quality=90)
             im2.save(output2, format='JPEG', quality=50)
             output.seek(0)
             output2.seek(0)
@@ -143,3 +143,14 @@ class ContactUsVideo(models.Model):
 
     class Meta:
         verbose_name_plural = "Contact Us Video"
+
+
+class QuickLinks(models.Model):
+    url = models.URLField(max_length=256, null=False)
+    name = models.CharField(max_length=128, null=False, blank=False)
+
+    class Meta:
+        verbose_name_plural = "Quick Links"
+
+    def __str__(self):
+        return u'{}'.format(self.name)

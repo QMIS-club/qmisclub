@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^faculty_members/$', views.faculty_members,
         name='faculty_members'),
     url(r'^faculty_member/(?P<member_id>\d+)/profile/$',views.faculty_member_profile,name='faculty_member_profile',),
-    url(r'^downloads/$', views.downloads, name='downloads')
+    url(r'^downloads/$', views.downloads, name='downloads'),
+    url(r'^department_map/$', views.department_map, name='department_map')
 ]

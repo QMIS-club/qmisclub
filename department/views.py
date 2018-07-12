@@ -27,9 +27,15 @@ def faculty_member_profile(request, member_id):
     return render(request, 'faculty_member_profile.html', {'member': obj, 'office_hours': office_hours})
 
 def major_guide(request):
-    '''This function will fetch all the documents in Document model'''
+    '''This function will fetch some documents in Document model'''
     mis_doc = Document.objects.filter(name='MIS Curriculum Guide').first()
     oscm_doc = Document.objects.filter(name='OSCM Curriculum Guide').first()
     other_courses_doc = Document.objects.filter(name='All Other CBA Courses').first()
     placement_doc = Document.objects.filter(name='Student Placement').first()
     return render(request, 'major_guide.html', {'mis_doc': mis_doc, 'oscm_doc': oscm_doc, 'other_courses_doc':other_courses_doc,'placement_doc':placement_doc})
+
+
+def department_map(request):
+    '''This function will fetch department map from Document model'''
+    obj = Document.objects.filter(name='Department Map').first()
+    return render(request,'department_map.html',{'map':obj})

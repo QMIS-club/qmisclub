@@ -1,0 +1,27 @@
+{% extends "base.html"%} {% block content %}
+<title>
+  {%block title%} Quick Links {%endblock%}
+</title>
+
+
+<div class="container">
+  <div class="row">
+    <div class="box">
+      <div class="col-lg-12">
+        <hr>
+        <h1 class="intro-text text-center">Quick
+                  <strong>Links</strong>
+              </h1>
+        <hr>
+        <p class = 'col-md-3'></p>
+        <p class = 'col-md-9'>{% for link in links %}
+          <i class="fa fa-link" aria-hidden="true" style="color:#c52d2f"></i> <a style="color:black" href='{{link.url}}'> {{link.name}}</a>
+          <br> {% endfor %}
+
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

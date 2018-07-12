@@ -350,7 +350,7 @@
             iframe_markup: '<iframe src ="{path}" width="{width}" height="{height}" frameborder="no"></iframe>',
             inline_markup: '<div class="pp_inline">{content}</div>',
             custom_markup: '',
-            social_tools: '<div class="twitter"><a href="http://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>' /* html or false to disable */
+            social_tools: '<div class="twitter"><a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-text="Check out this picture!">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>' /* html or false to disable */
         }, s);
         var o = this,
             u = false,
